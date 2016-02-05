@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using Utils;
 using System.Windows;
 using Newtonsoft.Json.Linq;
+using System.Runtime.CompilerServices;
 
 namespace FunctionalNetworkModel
 {
@@ -86,7 +87,7 @@ namespace FunctionalNetworkModel
         {
         }
 
-        public NodeViewModel(string name)
+        public NodeViewModel(string name) : this()
         {
             this.name = name;
         }
@@ -105,13 +106,13 @@ namespace FunctionalNetworkModel
         public abstract void Start();
 
         // triggered execution
-        public abstract void Execute();
+        public abstract void Execute(object context);
 
         public abstract void Dispose();
 
         public abstract void Edit();
 
-        public abstract object GetValue(ConnectorViewModel connector);
+        public abstract object GetValue(ConnectorViewModel connector, object context);
 
         public abstract JObject Serialize();
 
