@@ -105,6 +105,9 @@ namespace FunctionalNetworkModel
         // auto-start node
         public abstract void Start();
 
+        // auto-stp[ node
+        public abstract void Stop();
+
         // triggered execution
         public abstract void Execute(object context);
 
@@ -410,6 +413,7 @@ namespace FunctionalNetworkModel
                 connector.ParentNode = this;
                 connector.Type = ConnectorType.Input;
             }
+            
         }
 
         /// <summary>
