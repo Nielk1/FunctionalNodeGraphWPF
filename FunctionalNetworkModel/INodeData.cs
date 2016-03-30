@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FunctionalNetworkModel
 {
-    public interface INodeData
+    public interface INodeData: ICloneable
     {
     }
 }
